@@ -1,0 +1,31 @@
+.App{
+    width:80%;
+    min-height:80vh;
+    margin: 100px auto;
+    background: lightblue;
+}
+
+li{
+    list-style:none
+}
+.searchList{
+    width:100%;
+    margin-top: 30px;
+}
+.list-row{
+    width:100%;
+    height:50px;
+    display:flex;
+}
+.list-row .title{
+    width:40%;
+}
+.list-row .author{
+    width:30%;
+}
+.list-row .status{
+    width:10%;
+}
+.list-row .action{
+    width:20%;
+}
