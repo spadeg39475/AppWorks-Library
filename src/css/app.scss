@@ -1,0 +1,111 @@
+@import './normalize.scss';
+
+$blue-bk-first: rgb(58, 143, 183);
+$blue-bk-second: rgb(125,185,222);
+$blue-bk-third: rgb(129, 199, 212);
+$blue-bk-fourth: rgb(165, 222, 228);
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%; 
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(135deg, $blue-bk-first, $blue-bk-second, $blue-bk-third, $blue-bk-fourth);
+    
+}
+
+li{
+    list-style:none
+}
+
+
+//-------------------
+.App{
+    width:80%;
+    min-height:80vh;
+    margin: 0 auto;
+    padding-top: 10%;
+    
+    
+
+    h1{
+        padding: 20px;
+        text-align: center;
+        font-size: 3.5em;
+        letter-spacing: 2px;
+    }
+    form{
+        font-size:18px;
+        text-align: center;
+        width: 700px;
+        margin: 40px auto;
+        border-radius: 50px;
+        border: 2px solid #8a8a8a;
+        background-color: white;
+        select{
+            width:  60px;
+            border: none;
+            
+            &:focus{
+                outline: none;
+            }           
+        }
+        input{
+            width:600px;
+            height:40px;
+            
+            border: none;
+            padding-left: 20px;
+            &:focus{
+                outline: none;   
+            }
+        }
+    }
+
+    .searchList{
+        width:80%;
+        margin: 0 auto;
+        margin-top: 50px;
+        text-align: center;
+        #list-title{
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        .list-row{
+            width:100%;
+            
+            height:60px;
+            display:flex;
+            align-items: center;
+            
+            
+            .title{
+                width:25%;
+                padding-right: 10px;
+            }
+            .author{
+                width:15%;
+            }
+            .bID{
+                width:20%;
+            }
+            .status{
+                width:15%;
+            }
+            .action{
+                width:20%;
+            }
+    
+        }
+    }
+}
+
+
+
