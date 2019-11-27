@@ -79,7 +79,7 @@ function App() {
             placeholder='請搜尋完整書名或作者'
           />
         </form>
-        <div className='searchResultNums'>{query.value ? `搜尋到${searchResult.length}筆結果` : ''}</div>
+        <div className='searchResultNums'>{query.value ? `搜尋到 ${searchResult.length} 筆結果` : ''}</div>
         <List searchResult={searchResult} />
         <Popout />
       </div>

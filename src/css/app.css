@@ -222,6 +222,7 @@ li {
   min-height: 80vh;
   margin: 0 auto;
   padding-top: 10%;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .App h1 {
@@ -229,6 +230,8 @@ li {
   text-align: center;
   font-size: 3.5em;
   letter-spacing: 2px;
+  color: #f3f3f3;
+  text-shadow: 1px 1px #3f3f3f;
 }
 
 .App form {
@@ -237,7 +240,7 @@ li {
   width: 700px;
   margin: 20px auto 10px auto;
   border-radius: 50px;
-  border: 2px solid #8a8a8a;
+  border: 2px solid #6DCCDF;
   background-color: white;
 }
 
@@ -263,21 +266,25 @@ li {
 
 .App .searchResultNums {
   text-align: center;
+  color: #ffffff;
 }
 
-.App .searchList {
-  width: 80%;
+.searchList {
+  width: 90%;
   margin: 0 auto;
   margin-top: 30px;
   text-align: center;
+  padding: 10px 0;
 }
 
-.App .searchList #list-title {
+.searchList #list-title {
   font-size: 1.4em;
-  font-weight: bold;
+  font-weight: 600;
+  border-bottom: 1px solid #3f3f3f;
+  color: #3f3f3f;
 }
 
-.App .searchList .list-row {
+.searchList .list-row {
   width: 100%;
   height: 60px;
   display: -webkit-box;
@@ -286,30 +293,54 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 20px;
+  border-bottom: 1px dashed black;
 }
 
-.App .searchList .list-row .title {
+.searchList .list-row .title {
   width: 25%;
   padding-right: 10px;
 }
 
-.App .searchList .list-row .author {
+.searchList .list-row .author {
   width: 15%;
 }
 
-.App .searchList .list-row .bID {
+.searchList .list-row .bID {
   width: 20%;
 }
 
-.App .searchList .list-row .status {
+.searchList .list-row .status {
   width: 15%;
 }
 
-.App .searchList .list-row .action {
+.searchList .list-row .action {
   width: 20%;
 }
 
-.App .searchList .no-result {
+.searchList .list-row .action button {
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  border-radius: 30px;
+  width: 40%;
+  padding: 5px;
+  margin: 0 5px;
+  color: #ffffff;
+  background-color: #3f3f3f;
+  -webkit-box-shadow: 2px 2px #313131;
+          box-shadow: 2px 2px #313131;
+  border: none;
+}
+
+.searchList .list-row .action button:disabled {
+  background-color: #afafaf;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.searchList .no-result {
   margin: 20px;
   font-size: 20px;
 }
@@ -336,6 +367,13 @@ li {
 .popout .info {
   width: 300px;
   height: 200px;
-  background-color: #e4e4e4;
+  line-height: 200px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  border-radius: 20px;
+  font-size: 30px;
+  letter-spacing: 4px;
+  background-color: #313131;
 }
 /*# sourceMappingURL=app.css.map */
