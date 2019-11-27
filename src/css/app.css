@@ -235,7 +235,7 @@ li {
   font-size: 18px;
   text-align: center;
   width: 700px;
-  margin: 40px auto;
+  margin: 20px auto 10px auto;
   border-radius: 50px;
   border: 2px solid #8a8a8a;
   background-color: white;
@@ -261,10 +261,14 @@ li {
   outline: none;
 }
 
+.App .searchResultNums {
+  text-align: center;
+}
+
 .App .searchList {
   width: 80%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: center;
 }
 
@@ -303,5 +307,35 @@ li {
 
 .App .searchList .list-row .action {
   width: 20%;
+}
+
+.App .searchList .no-result {
+  margin: 20px;
+  font-size: 20px;
+}
+
+.popout {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0.9;
+}
+
+.popout .info {
+  width: 300px;
+  height: 200px;
+  background-color: #e4e4e4;
 }
 /*# sourceMappingURL=app.css.map */
