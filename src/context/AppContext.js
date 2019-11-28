@@ -12,8 +12,6 @@ const AppContextProvider = (props) => {
     const [infoIsShow, setInfoIsShow] = useState(false);
     const [info, setInfo] = useState('')
 
-    
-
 
     return(
         <AppContext.Provider  value={{

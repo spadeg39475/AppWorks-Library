@@ -7,16 +7,7 @@ import '../css/app.css'
 import Popout from './Popout';
 
 
-
-
-
-
 function App() {
-  
-  // const [tagSearch, setTagSearch] = useState('title');
-  // const [bookSearch, setBookSearch] = useState('');
-  // const [query, setQuery] = useState({tag: 'title', value: ''});
-  // const [searchResult, setSearchResult] = useState([]);
 
   const {
     tagSearch, setTagSearch,
@@ -24,13 +15,13 @@ function App() {
     query, setQuery,
     searchResult, setSearchResult 
   } = useContext(AppContext)
+
   
-
-
   useEffect(()=>{
     
     let unsubscribe = firebase.db.collection('booklist')
         .where(query.tag, '==', query.value)
+        .orderBy(query.tag==='title'? 'author': 'title')
         .onSnapshot(snapshot => {
           let result =[]
           snapshot.forEach(doc => {
@@ -42,7 +33,6 @@ function App() {
     return () => unsubscribe();
 
   },[query, setSearchResult])
-
 
 
   const handleSearch = async(e) => {
@@ -62,7 +52,6 @@ function App() {
   }
 
   
-
   return (
     
       <div className="App">
