@@ -1,68 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# PicCollage Library
+ A library application which allows user to search books by title or author, and can check if the book was borrowed or not. It's convenient for users to borrow and return the books!
 
-## Available Scripts
 
-In the project directory, you can run:
+## Live Demo
+[Demo WebSite](https://appworks-library.web.app/)
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installing
+```
+// install dependencies
+npm install
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+// serve with at localhost:3000
+npm run start
 
-### `npm test`
+// build for production
+npm run build
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Architecture
+```
+src
+ |--components
+ |  |--App.js
+ |  |--List.js
+ |  |--Popout.js
+ |--context
+ |  |--AppContext.js
+ |--css
+ |  |--app.css
+ |  |--app.css.map
+ |  |--app.scss
+ |  |--normalize.css
+ |  |--normalize.css.map
+ |  |--normalize.scss
+ |--firebase.js
+ |--index.js
+```
+#### The project architecture divided into four parts:
+* components - seperate different components by UI
+* context - store context states which every components can access.
+* css - styles of the application.
+* firebase.js defined some methods access the firestore and can be reused.
 
-### `npm run build`
+#### Web Architecture
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+App            #display main title and search bar
+ |
+ |--List       #display the search result list
+ |
+ |--Popout     #display the popout Info after borrow or return books
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Dependency 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* React 
+    * build the app by Create React App 
 
-### `npm run eject`
+* Firebase services 
+    *  firestore - backend database to store the book list for library
+    *  hosting - host for demo website
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## How to approach the problem
+* For the feature that every user can search the book list and see the borrowing status in real-time, I  use firestore service as my database. Add a listener to see if the search-list data in firestore updates, and rerender the search list while the data changed.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* For borrowing and returning books, I update the book's borrowing status in firestore when users click the borrowing or returning button.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Use React Context as a center to store states. This can allow every component which may be in different layer of the application to access the states without passing the props through several layers. I think it will be more maintainable when the project grows larger.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Use React hooks with context together for more readable and clean code.
 
-## Learn More
+* Use SASS framework for styling first time as a practice and nested structure is more readable than pure CSS.
+ 
+## Demo picture
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![](https://i.imgur.com/XpkHciT.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![](https://i.imgur.com/fHcjI8P.jpg)
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

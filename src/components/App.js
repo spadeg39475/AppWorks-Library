@@ -53,7 +53,7 @@ function App() {
   
   return (
     
-      <div className="App">
+      <div className="App" data-testid='App'>
         <h1>PicCollage Library</h1>
         <form onSubmit={handleSearch}>
           <select onChange={handleTag} >
