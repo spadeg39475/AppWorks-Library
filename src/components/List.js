@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import firebase from '../firebase';
 
-const List = props => {
+const List = () => {
 
     const {searchResult, query, setInfo, setInfoIsShow} = useContext(AppContext);
 
-    const borrowBook = (id, status) =>{
+    const borrowBook = (id) =>{
         firebase.setBookStatus(id, 'borrowed');
         setInfoIsShow(true);
         setInfo('借閱成功 !');
@@ -19,7 +19,8 @@ const List = props => {
     }
 
     let searchResultList = searchResult;
-   
+    
+    //if have search result
     if( searchResult.length > 0){
         searchResultList = searchResult.map((item) => {
             return (
@@ -35,12 +36,13 @@ const List = props => {
                 </div>
             ) 
          })
-    }else {
+    }else {  // no search result 
         searchResultList = (
             <div className='no-result'>查無結果，請輸入正確書名或作者</div>
         )
     }
     
+    // show list after search
     if(query.value){
         return (
             <>

@@ -19,7 +19,6 @@ class Firebase {
         this.db = firebase.firestore();
     }
 
-
     getBooksByTitle = (title) =>{
         return new Promise((resolve, reject) => {
             this.db.collection('booklist').where('title', '==', title)
@@ -83,6 +82,7 @@ class Firebase {
         })
     }
 
+    // set borrow status
     setBookStatus = (id, status) => {
         return new Promise((resolve, reject) => {
             this.db.collection('booklist').doc(id).update({status: status })
@@ -96,26 +96,6 @@ class Firebase {
         })
     }
 
-    
-    // getBookList = () => {
-    //     let result = new Promise((resolve, reject) => {
-    //         this.db.collection('booklist')
-    //         .get()
-    //         .then((item) => {
-    //             let returnData = [];
-    //             item.forEach((el) => {
-    //                 returnData.push({id: el.id, data: el.data()});
-                    
-    //             })
-    //             resolve(returnData);
-    //         })
-    //         .catch((error) => {
-    //             console.log('Error getting documents', error);
-    //             reject(error);  
-    //         })
-    //     })
-    //     return result;
-    // }
 }
 
 export default new Firebase();

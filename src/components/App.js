@@ -1,4 +1,4 @@
-import React , { useState, useEffect, useContext}from 'react';
+import React , { useEffect, useContext}from 'react';
 import { AppContext } from '../context/AppContext';
 import firebase from '../firebase';
 import List from './List';
@@ -16,9 +16,8 @@ function App() {
     searchResult, setSearchResult 
   } = useContext(AppContext)
 
-  
+  // update list when search result changed
   useEffect(()=>{
-    
     let unsubscribe = firebase.db.collection('booklist')
         .where(query.tag, '==', query.value)
         .orderBy(query.tag==='title'? 'author': 'title')
