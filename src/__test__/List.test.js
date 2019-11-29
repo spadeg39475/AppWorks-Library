@@ -1,15 +1,10 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import List from '../components/List';
 import { AppContext } from '../context/AppContext';
 
-beforeEach(cleanup); // clean the DOM!
+beforeEach(cleanup); 
 
-jest.mock('../firebase', () => ({
-  firebase: {
-    setBookStatus: jest.fn()
-  },
-}));
 
 function renderList(query, searchResult) {
   return render(
