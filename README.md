@@ -16,11 +16,15 @@ npm run start
 
 // build for production
 npm run build
+
+// run tests
+npm run test
 ```
 
 ## Project Architecture
 ```
 src
+ |--__test__
  |--components
  |  |--App.js
  |  |--List.js
@@ -40,7 +44,8 @@ src
 #### The project architecture divided into four parts:
 * components - seperate different components by UI
 * context - store context states which every components can access.
-* css - styles of the application.
+* css - styles of the application
+* __test __ - integrating tests
 * firebase.js defined some methods access the firestore and can be reused.
 
 #### Web Architecture
@@ -55,9 +60,12 @@ App            #display main title and search bar
 
 ## Dependency 
 
-* React 
-    * build the app by Create React App 
+* React - build the app by Create React App
 
+* Babel - JavaScript transpiler that converts edge JavaScript and JSX into plain old ES5 JavaScript
+
+* Jest & React Testing Library for unit testing
+ 
 * Firebase services 
     *  firestore - backend database to store the book list for library
     *  hosting - host for demo website
@@ -72,6 +80,8 @@ App            #display main title and search bar
 * Use React hooks with context together for more readable and clean code.
 
 * Use SASS framework for styling first time as a practice and nested structure is more readable than pure CSS.
+
+* Use Jest and React Testing Library to write some simple tests.
  
 ## Demo picture
 
