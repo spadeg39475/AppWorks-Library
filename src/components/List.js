@@ -36,7 +36,9 @@ const List = () => {
                 </div>
             ) 
          })
-    }else {  // no search result 
+
+    //if no search result 
+    }else {  
         searchResultList = (
             <div className='no-result'>查無結果，請輸入正確書名或作者</div>
         )

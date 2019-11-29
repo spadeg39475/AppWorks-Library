@@ -3,7 +3,7 @@ import firebaseConfigValue from './firebaseConfig'
 import "firebase/firestore";
 
 
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: firebaseConfigValue.apiKey,
     authDomain: firebaseConfigValue.author,
     databaseURL: firebaseConfigValue.databaseURL,
